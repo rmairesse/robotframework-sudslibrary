@@ -30,7 +30,7 @@ suds_rqmnt = 'suds-jurko'
 suds_rqmnt = os.environ.get('SUDS_LIBRARY_SUDS_REQUIREMENT', suds_rqmnt)
 
 
-setup(name         = 'robotframework-sudslibrary',
+setup(name         = 'aljcalandra-robotframework-sudslibrary',
       version      = VERSION,
       description  = 'Robot Framework test library for SOAP-based services.',
       long_description = DESCRIPTION,
