@@ -1,7 +1,12 @@
 Release Notes
 =============
 
-0.9 (un-released)
+1.0 (un-released)
+----------------
+- Python 3 support
+- Removed urllib2
+
+0.9
 ----------------
 - Restore compatability with suds-jurko
 
