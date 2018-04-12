@@ -22,15 +22,15 @@ def acceptance_tests(args):
         runner += '.bat'
     _make_results_dir()
     cmd = [runner] + ROBOT_ARGS + args + [testenv.TEST_DATA]
-    print "Executing:\n" + " ".join(cmd)
+    print("Executing:\n" + " ".join(cmd))
     subprocess.call(cmd)
     outputxml = join(testenv.RESULTS_DIR, "output.xml")
     statuschecker.process_output(outputxml)
     rc = robot.rebot(outputxml, outputdir=testenv.RESULTS_DIR)
     if rc == 0:
-        print 'All tests passed'
+        print('All tests passed')
     else:
-        print '%d test%s failed' % (rc, 's' if rc != 1 else '')
+        print('%d test%s failed' % (rc, 's' if rc != 1 else ''))
     
 def _make_results_dir():
     if not os.path.exists(testenv.RESULTS_DIR):

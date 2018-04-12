@@ -145,8 +145,8 @@ class _OptionsKeywords(object):
             service = 0
         elif not service is None:
             service = parse_index(service)
-        if isinstance(names, basestring):
-            names = names.split(",")
+        if isinstance(names, bytes):
+            names = names.split(b",")
         if service is None:
             for svc in wsdl.services:
                 svc.setlocation(url, names)
@@ -173,8 +173,8 @@ class _OptionsKeywords(object):
         the namespace http://some/namespace/A if it is not already imported:
         | Add Doctor Import | http://schemas.xmlsoap.org/soap/encoding/ | filters=http://some/namespace/A |
         """
-        if isinstance(filters, basestring):
-            filters = filters.split(",")
+        if isinstance(filters, bytes):
+            filters = filters.split(b",")
         imp = Import(import_namespace, location)
         if not filters is None:
             for filter in filters:

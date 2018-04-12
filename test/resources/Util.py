@@ -21,7 +21,7 @@ class Util(object):
         """`nonce` should be Base64 encoded."""
         token = self._get_autousernametoken()
         token.autosetnonce = False
-        token.setnonce(base64.decodestring(nonce))
+        token.setnonce(base64.decodebytes(nonce))
 
     def set_fixed_created(self, created):
         """Set a fixed value for the created element.
@@ -39,7 +39,7 @@ class Util(object):
         :type dt: str, unicode
         """
         pattern = r'\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z'
-        if not isinstance(dt, (str, unicode)) or not re.match(pattern, dt):
+        if not isinstance(dt, (str)) or not re.match(pattern, dt):
             raise ValueError("created must be a string and match %s" % pattern)
         return datetime.strptime(dt, '%Y-%m-%dT%H:%M:%SZ')
 

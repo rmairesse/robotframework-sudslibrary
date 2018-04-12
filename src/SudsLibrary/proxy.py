@@ -21,8 +21,8 @@ import socket
 class RawSoapMessage(object):
 
     def __init__(self, string):
-        if isinstance(string, unicode):
-            self.message = string.encode('UTF-8')
+        if isinstance(string, bytes):
+            self.message = string.decode()
         else:
             self.message = str(string)
 
@@ -30,7 +30,7 @@ class RawSoapMessage(object):
         return self.message
 
     def __unicode__(self):
-        return self.message.decode('UTF-8')
+        return self.message
 
 
 class _ProxyKeywords(object):
@@ -105,7 +105,7 @@ class _ProxyKeywords(object):
                 received = method(*args)
             if expect_fault:
                 raise AssertionError('The server did not raise a fault.')
-        except WebFault, e:
+        except WebFault as e:
             if not expect_fault:
                 raise e
             received = e.fault

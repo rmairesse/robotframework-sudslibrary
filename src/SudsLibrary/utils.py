@@ -24,7 +24,7 @@ def parse_index(value):
 
 
 def to_bool(item):
-    if isinstance(item, basestring):
+    if isinstance(item, str):
         if utils.eq(item, 'True'):
             return True
         if utils.eq(item, 'False'):
