@@ -24,13 +24,12 @@ Programming Language :: Python :: 3
 Topic :: Software Development :: Testing
 """.strip().splitlines()
 
-# determine whether to use Jurko's fork of Suds. This will only work for source
 # distributions.
-suds_rqmnt = 'suds-jurko'
+suds_rqmnt = 'suds-py3'
 suds_rqmnt = os.environ.get('SUDS_LIBRARY_SUDS_REQUIREMENT', suds_rqmnt)
 
 
-setup(name         = 'robotframework-sudslibrary-aljcalandra',
+setup(name         = 'robotframework-sudslibrary',
       version      = VERSION,
       description  = 'Robot Framework test library for SOAP-based services.',
       long_description = DESCRIPTION,
