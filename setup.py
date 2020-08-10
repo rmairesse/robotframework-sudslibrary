@@ -24,11 +24,6 @@ Programming Language :: Python :: 3
 Topic :: Software Development :: Testing
 """.strip().splitlines()
 
-# distributions.
-suds_rqmnt = 'suds-py3'
-suds_rqmnt = os.environ.get('SUDS_LIBRARY_SUDS_REQUIREMENT', suds_rqmnt)
-
-
 setup(name         = 'robotframework-sudslibrary',
       version      = VERSION,
       description  = 'Robot Framework test library for SOAP-based services.',
@@ -42,7 +37,6 @@ setup(name         = 'robotframework-sudslibrary',
       classifiers  = CLASSIFIERS,
       zip_safe     = True,
       install_requires = [
-                            suds_rqmnt,
                             'robotframework >= 2.6.0',
                          ],
       package_dir  = {'' : 'src'},

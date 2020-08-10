@@ -13,7 +13,7 @@ Installation
 
 You can install this version of SudsLibrary using pip, with the following command
 
-  ``pip install git+https://github.com/aljcalandra/robotframework-sudslibrary``
+  ``pip install git+https://github.com/rmairesse/robotframework-sudslibrary``
 
 Getting Help
 ------------
